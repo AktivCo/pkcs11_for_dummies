@@ -21,12 +21,12 @@ elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
 endif()
 
 if (WIN32)
-	set(librtpkcs11ecp_file_name rtpkcs11ecp.dll) 
+	set(librtpkcs11ecp_file_name rtpkcs11ecp.dll)
 	set(librtpkcs11ecp_download_url https://download.rutoken.ru/Rutoken/PKCS11Lib/Current/Windows/${ARCH}/${librtpkcs11ecp_file_name})
 endif (WIN32)
 
 if (UNIX AND NOT APPLE)
-	set(librtpkcs11ecp_file_name rtpkcs11ecp.so) 
+	set(librtpkcs11ecp_file_name librtpkcs11ecp.so)
 	set(librtpkcs11ecp_download_url http://download.rutoken.ru/Rutoken/PKCS11Lib/Current/Linux/${ARCH}/${librtpkcs11ecp_file_name})
 endif (UNIX AND NOT APPLE)
 
