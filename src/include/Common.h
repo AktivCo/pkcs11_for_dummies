@@ -51,8 +51,8 @@
 #endif
 #ifdef __APPLE__
 /* Библиотека только для Рутокен ЭЦП, поддерживает алгоритмы ГОСТ и RSA */
-	#define PKCS11_LIBRARY_NAME         "librtpkcs11ecp.dylib"
-	#define PKCS11ECP_LIBRARY_NAME      "librtpkcs11ecp.dylib"
+	#define PKCS11_LIBRARY_NAME         "rtpkcs11ecp.framework/rtpkcs11ecp"
+	#define PKCS11ECP_LIBRARY_NAME      "rtpkcs11ecp.framework/rtpkcs11ecp"
 #endif
 
 #ifndef TOKEN_TYPE_RUTOKEN
