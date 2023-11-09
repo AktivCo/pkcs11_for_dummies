@@ -36,7 +36,16 @@ if (APPLE)
 endif (APPLE)
 
 set(librtpkcs11ecp_path ${CMAKE_BINARY_DIR}/${librtpkcs11ecp_file_name})
-file(DOWNLOAD ${librtpkcs11ecp_download_url} ${librtpkcs11ecp_path})
+file(DOWNLOAD ${librtpkcs11ecp_download_url} ${librtpkcs11ecp_path} STATUS download_status)
+
+# Separate the returned status code, and error message.
+list(GET download_status 0 status_code)
+list(GET download_status 1 error_msg)
+# Check if download was successful.
+if(NOT ${status_code} EQUAL 0)
+       # Exit CMake if the download failed, printing the error message.
+       message(FATAL_ERROR "Error occurred during download: ${error_msg}")
+endif()
 
 add_custom_target(	librtpkcs11ecp 
 			DEPENDS ${librtpkcs11ecp_path}
